@@ -19,17 +19,18 @@ double rule below (C/F convention); warm paper direction.
 **Left behind (costume):** wooden desk, photorealism, ink blots, stains, page
 curl, 3D binding, aged-paper saturation, handwritten data voice.
 
-## school-report-card-1920.jpg
+## school-report-card-1920.png
 US county school report card, 1920–21. Letterpress-printed form filled in by
 hand: dotted leader lines, printed grading rubric in the footer, handwritten
 "Promoted — Yes" verdict.
 
-**Status: proposed (DESIGN v1.2, pending owner yes/no).** Candidate steals:
-dotted leader-line form inputs (`DottedField`); printed legend/rubric footer
-(`Rubric`); handwritten verdict ritual at period close ("Keep for OCT? —
-*Yes*"); the provenance rule — machine-observed facts print in dot-matrix,
-human judgments write in Kalam. Open A/B for the Phase 2 prototype: period
-serif vs IBM Plex for printed form labels.
+**Distilled into DESIGN.md v1.2 (adopted):** dotted leader-line form inputs
+(`DottedField`); printed legend/rubric footer (`Rubric`, one-line hard limit);
+period-close verdict ritual ("Keep for {MMM}? —" answered in Kalam, logged as
+a dated judgment); the provenance rule — machine-observed facts print in
+dot-matrix, human judgments write in Kalam.
 
 **Left behind (costume):** foxing/stains, aged saturation, handwritten data
-values (a teacher wrote those marks; our register is machine-kept).
+values (a teacher wrote those marks; our register is machine-kept), and the
+letterpress serif for form labels — rejected as a fourth type voice with no
+role (serif A/B resolved 2026-08: IBM Plex holds).

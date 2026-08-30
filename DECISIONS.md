@@ -35,14 +35,16 @@ Never edit past entries; correct by appending a new one.
   github.com/aygupta-coursera/subscription-management; workshop pulls before
   build sessions. Rejected: manual download-and-drag (drift-prone, already
   caused one stale-spec incident), Drive-synced folder (laggy, no history).
+- **2026-08 · DESIGN v1.2: report-card steals adopted.** Provenance rule
+  (machine facts print in Doto; the form speaks Plex; owner judgments write
+  in Kalam — extends pencil/ink entry states); dotted leader-line fields
+  (no boxed inputs); one-line rubric footer; period-close verdict ritual
+  ("Keep for {MMM}? —" answered in Kalam, logged as a dated judgment).
+  Rejected: period-serif form labels (a fourth type voice with no role;
+  walks toward the cream+serif cliché).
 
 ## Proposed, not yet folded into specs
 
-- **DESIGN v1.2 candidates (report-card artifact):** dotted leader-line form
-  inputs; printed rubric/legend footer; handwritten "verdict" ritual at period
-  close; rule: machine-observed facts print (dot-matrix), human judgments
-  write (Kalam). Plus an A/B to run in the Phase 2 prototype: period serif vs
-  IBM Plex for printed form labels.
 - **CLAUDE.md data-ingestion section:** signal ladder (statement-CSV
   recurrence detection in v1 → email receipts v2 → SMS via companion/forwarder
   v3 → quarterly rail audits), sync as a reconciliation loop (propose →

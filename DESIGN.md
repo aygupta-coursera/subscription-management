@@ -6,6 +6,10 @@ shifts from bank passbook to **bahi khata register** — warm paper, madder-red
 ruled columns, double-page spread, ditto marks, double-ruled totals. Approved
 via rendered mockup. Dot-matrix data voice and the stamp system carry over
 unchanged.
+Amended v1.2 (owner review of a 1920 school report card artifact): form
+language (dotted leader-line fields), printed rubric footer, period-close
+verdict ritual, and the provenance rule — machine facts print, human
+judgments write. Serif-label A/B resolved: no serif; IBM Plex holds.
 Reference artifacts: shopkeeper bahi khata registers (red-ruled columns,
 handwritten margin notes, ditto marks, boxed totals, struck-through settled
 rows) + Indian bank passbooks (9-pin dot-matrix entries, rubber ink stamps).
@@ -54,6 +58,9 @@ Rules:
 | UI chrome, headers, labels | **IBM Plex Sans** | Bureaucratic, neutral, disciplined. Sentence case labels, UPPERCASE column heads with letter-spacing. |
 | Stamps | IBM Plex Sans Condensed, 700, UPPERCASE | Inside a 2px border box, rotated −2° to +2° (deterministic per entity id, so it doesn't reshuffle on render). |
 | Margin notes / owner annotations | **Kalam** | Handwritten, Indian-designed. Only for user-authored notes. |
+
+Form labels use IBM Plex Sans (serif A/B resolved 2026-08: rejected — a
+fourth voice with no role; see §5 provenance rule for the three-voice map).
 
 Scale: 13px base for ledger rows (dense is correct — passbooks are dense),
 11px captions, 20/28px page headers. Line-height tight (1.35) in tables,
@@ -136,14 +143,49 @@ Stamp construction: bordered box, condensed caps, deterministic rotation,
 no texture images). Stamps are clickable — they ARE the "needs attention"
 affordance and deep-link to the resolving action.
 
-## 5. Motion
+## 5. Form language & provenance (v1.2)
+
+### Provenance rule — the governing principle
+**Machine-observed facts print; human judgments write.** Three voices, three
+roles, never mixed:
+- Dot-matrix (Doto) = what the system observed or computed: amounts, dates,
+  rails, totals.
+- IBM Plex = the printed form itself: labels, column heads, rubric, chrome.
+- Kalam = what the owner decided or annotated: margin notes, verdicts,
+  pencil-entry confirmations. Kalam NEVER renders system data.
+This extends to entry states: proposed (pencil — `--ink-faint`, dotted
+underline) vs confirmed (inked — full `--ink`). Confirming an entry is an
+owner judgment, so the confirm action is voiced in Kalam.
+
+### Dotted leader-line fields (`DottedField`)
+All form inputs follow the printed-form convention: printed label (Plex,
+`--ink-label`), dotted leader line (`--rule-soft` dots), value written on the
+line. No boxed inputs anywhere. Focus state: leader dots turn `--carbon`;
+caret sits ON the line. Errors print beneath the line in `--stamp-red`,
+register-terse (§7 voice).
+
+### Rubric footer (`Rubric`)
+Each register page may carry ONE printed legend line at the foot, below
+nothing else but the page edge, explaining the stamp inks:
+"RED — money leaving or action overdue · PURPLE — a clock is running ·
+GREEN — settled." 11px Plex, `--ink-faint`. Hard limit: one line. If it
+needs two, simplify the thing it explains instead.
+
+### Verdict ritual (period close)
+At month end, every entry flagged during the period gets a printed question
+in the review page: "Keep for {MMM}? — " with a dotted leader. The owner's
+answer renders in Kalam and is logged as a judgment (with date) in the
+entry's history. Default-renewal is the enemy; the ritual converts renewal
+into a recorded decision.
+
+## 6. Motion
 
 One orchestrated moment: applying a state change stamps the row — scale
 1.15→1.0 with a 90ms ease-out and a 1px settle, like a hand stamp landing.
 Row strike-through draws left→right over 200ms on revoke.
 Everything else is instant. `prefers-reduced-motion`: all of the above off.
 
-## 6. Voice & copy
+## 7. Voice & copy
 
 - Register terseness: "DR ₹1,999 · 04 SEP", "B/F", "C/F". Full sentences only
   in explanatory empty states.
@@ -153,10 +195,9 @@ Everything else is instant. `prefers-reduced-motion`: all of the above off.
 - Empty ledger: "No entries this period. Add your first subscription — the
   register only works if it's complete."
 
-## 7. Quality floor
+## 8. Quality floor
 
 Responsive to 380px: the book closes to a single page below ~900px (see §3);
 below ~480px the RAIL column folds into the particulars line. Visible focus
-ring in `--carbon`. All money in integer
-minor units. Keyboard: `/` focuses quick-add, `Enter` commits, `S` stamps
+ring in `--carbon`. All money in integer minor units. Keyboard: `/` focuses quick-add, `Enter` commits, `S` stamps
 selected row. WCAG AA contrast verified for all ink-on-paper pairs.

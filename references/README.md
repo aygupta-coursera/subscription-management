@@ -19,7 +19,7 @@ double rule below (C/F convention); warm paper direction.
 **Left behind (costume):** wooden desk, photorealism, ink blots, stains, page
 curl, 3D binding, aged-paper saturation, handwritten data voice.
 
-## school-report-card-1920.png
+## school-report-card-1920.jpg
 US county school report card, 1920–21. Letterpress-printed form filled in by
 hand: dotted leader lines, printed grading rubric in the footer, handwritten
 "Promoted — Yes" verdict.

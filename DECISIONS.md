@@ -42,6 +42,20 @@ Never edit past entries; correct by appending a new one.
   ("Keep for {MMM}? —" answered in Kalam, logged as a dated judgment).
   Rejected: period-serif form labels (a fourth type voice with no role;
   walks toward the cream+serif cliché).
+- **2026-08 · DESIGN v1.3: interaction layer added after usability pass.**
+  Frames read as documents, not an interface: controls indistinguishable from
+  labels, no navigation, no states, unclear pane relationship. Added §8
+  (control hierarchy: one primary per view, carbon means interactive and
+  nothing else; required states incl. selected and focus; persistent register
+  header with visible back; right page is a derived lens on the left; 44px
+  targets; depth capped at two). Corrections: (a) red is scarce — routine
+  amounts print in `--ink`, `--stamp-red` reserved for danger/≤7 days/errors,
+  because colouring every debit red made the alarm meaningless; (b) stamps are
+  actionable (solid border, pointer, `›`) or settled (dashed, .6, inert) —
+  never ambiguously both; (c) Kalam is an output style, never an input method —
+  the owner taps Keep/Cancel and the answer renders as handwriting.
+  Rejected: page-turn as a general navigation model (works only for the
+  register ↔ attention pair), shortcut-only actions.
 
 ## Proposed, not yet folded into specs
 

@@ -153,31 +153,42 @@ usage tracking integrations, multi-user, mobile app.
   quarterly/3, etc., displayed as monthly-equivalent.
 - Timezone: Asia/Kolkata for all debit-date logic.
 
+### UI machinery — DECIDED, binding for all build sessions
+
+- **No UI component libraries.** No shadcn/ui, no MUI, no Chakra, no DaisyUI,
+  no template kits. Their default aesthetic is the generic-SaaS look this
+  product exists to reject, and whatever ships in the repo becomes the default
+  every future build session reaches for.
+- **No Tailwind.** Plain CSS organized around design tokens; `var(--stamp-red)`
+  must stay legible to a designer reviewing diffs.
+- **`tokens.css` is the single source of visual truth** — DESIGN.md §1–2
+  translated 1:1 into CSS custom properties. No hex values anywhere else in
+  the codebase; every color/type decision references a token.
+- **Bespoke component set, built from DESIGN.md** (small by design):
+  `PageSpread`, `LedgerTable`, `Entry` (incl. pencil/proposed vs inked/confirmed
+  states), `Stamp`, `TotalsBox` (C/F double rule), `DottedField` (leader-line
+  form input), `MarginNote` (Kalam), `Rubric` (legend footer).
+- **Headless primitives allowed, skinned only in tokens:** Radix (or equivalent)
+  for genuinely hard behavior — dialogs, combobox/autocomplete for quick-add,
+  focus management. Mechanics yes, costume never.
+- Acceptance rule for any new UI: if a screenshot of it could be mistaken for
+  a shadcn dashboard, it fails review regardless of function.
+
 ---
 
-## 7. Visual direction — DECIDED IN DISCUSSION, DO NOT DEFAULT
+## 7. Visual direction — DECIDED: A. Bank passbook / khata ledger
 
-Constraint from owner: "vintage nostalgia, but not clichéd." Explicitly banned:
-generic 70s-cream-and-orange retro, Instagram-filter grain, fake paper texture
-slapped on a normal SaaS layout, neo-brutalism dressed as retro.
+Owner decision (Aug 2026). Full token system, typography, layout, stamp system,
+motion, and copy voice live in **DESIGN.md** — that file is authoritative for all
+UI work. Core rules: warm bahi paper with madder-red structural rules (identity
+from rules/dot-matrix/stamps, never cream-plus-serif), dot-matrix for ledger data,
+rubber stamps as the entire status system (the signature element), red reserved
+for debits and danger, no gradients, no dark mode, aesthetic must carry
+information — never decoration alone.
 
-Candidate directions under discussion (pick ONE and commit fully):
-- **A. Bank passbook / khata ledger** — Indian bank passbook & shopkeeper khata:
-  ruled ledger lines, dot-matrix numerals, ink stamps for state changes
-  ("REVOKED", "TRIAL ENDS"), carbon-copy blues, hand-numbered pages. Domain-native
-  nostalgia: this is literally what money records used to look like here.
-- **B. Railway reservation chart / ticket** — Indian Railways ephemera: cardboard
-  Edmondson tickets, dot-matrix reservation charts, stencil type, punch holes as
-  status markers.
-- **C. Teletext / CRT terminal** — phosphor mono/amber, scanline restraint,
-  tabular density; nostalgia of early banking terminals.
-- **D. Vintage Indian print ephemera** — matchbox-label color plates, hand-painted
-  signage type; most decorative, hardest to keep functional.
-
-Whichever is chosen: the aesthetic must carry *information* (stamps = status,
-ledger rules = alignment, ticket punches = lifecycle), never decoration alone.
-Typography, color tokens, and interaction metaphors get defined in a separate
-DESIGN.md after the choice.
+Rejected candidates, for the record: railway ticket ephemera (metaphor strains),
+CRT/teletext (over-done in 2024–26 side projects), vintage print ephemera
+(decoration without informational grammar).
 
 ---
 
@@ -204,12 +215,11 @@ Directionally solid; re-validate before any external-facing use.
 
 ## 9. Open questions
 
-1. Visual direction: A/B/C/D above — decide before any UI code.
-2. Name: "Khata" placeholder. Alternatives welcome.
-3. v1 alert channel: email digest vs browser notifications vs both.
-4. Where does it run: fully local (laptop) vs small always-on server (needed for
+1. Name: "Khata" placeholder. Alternatives welcome.
+2. v1 alert channel: email digest vs browser notifications vs both.
+3. Where does it run: fully local (laptop) vs small always-on server (needed for
    scheduled alerts to actually "come to me").
-5. Gmail parse in v2: OAuth read-only scope acceptable, or forward-to-inbox
+4. Gmail parse in v2: OAuth read-only scope acceptable, or forward-to-inbox
    parsing instead (privacy-cleaner)?
 
 ## 10. Working agreements for Claude on this project
